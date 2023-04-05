@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const morgan = require('morgan');
 const { dbConnection } = require('./database/config');
 
 require('dotenv').config()
@@ -20,6 +21,8 @@ app.use(cors())
 //Puerto
 const port = process.env.PORT;
 
+// Morgan logs
+app.use(morgan('dev'))
 
 //Directorio Publico
 
