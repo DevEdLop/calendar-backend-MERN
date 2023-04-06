@@ -4,7 +4,7 @@ const Evento = require('../models/Event.model')
 const getEventos = async (req = request, res = response) => {
 
     const evento = await Evento.find()
-        .populate('user', 'name');
+                               .populate('user', 'name');
 
     res.json({
         ok: true,
@@ -14,8 +14,6 @@ const getEventos = async (req = request, res = response) => {
 const crearEvento = async (req = request, res = response) => {
 
     const evento = new Evento(req.body);
-
-    console.log(evento)
 
     try {
 
